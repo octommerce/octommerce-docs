@@ -1,0 +1,31 @@
+name: Octommerce Docs Template
+description:
+author: Octommerce
+homepage: 'http://octommerce.com'
+form:
+    tabs:
+        fields:
+            site_name:
+                label: Site Name
+                comment: The website name as it should appear on the front-end
+                span: auto
+                tab: Site
+            site_tagline:
+                label: Site Tagline
+                span: auto
+                tab: Site
+            site_description:
+                label: Site Description
+                type: textarea
+                size: tiny
+                span: auto
+                tab: Site
+
+            social_github:
+                label: Github
+                span: auto
+                tab: Social Media
+            social_slack:
+                label: Slack
+                span: auto
+                tab: Social Media
