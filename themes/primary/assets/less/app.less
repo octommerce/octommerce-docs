@@ -9,5 +9,136 @@
 //
 
 body {
-    padding-top: 60px;
+    // padding-top: 60px;
+}
+
+.gradient-horizontal(@color1, @color2) {
+    background: -webkit-linear-gradient(@color1, @color2);
+    background: -o-linear-gradient(@color1, @color2);
+    background: -moz-linear-gradient(@color1, @color2);
+    background: linear-gradient(@color1, @color2);
+}
+
+.gradient-diagonal(@color1, @color2) {
+    background: -webkit-linear-gradient(left, @color1 , @color2);
+    background: -o-linear-gradient(right, @color1, @color2);
+    background: -moz-linear-gradient(right, @color1, @color2);
+    background: linear-gradient(to right, @color1 , @color2);
+}
+
+.row-flex {
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -o-display: flex;
+
+    &.flex-tablet {
+        display: block;
+
+        @media (min-width: @screen-tablet) {
+            display: flex;
+            -webkit-display: flex;
+            -moz-display: flex;
+            -o-display: flex;
+        }
+    }
+
+    &.flex-desktop {
+        display: block;
+
+        @media(min-width: @screen-desktop) {
+            display: flex;
+            -webkit-display: flex;
+            -moz-display: flex;
+            -o-display: flex;
+        }
+    }
+
+    &.flex-align-center {
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.flex-align-top {
+        align-items: start;
+        justify-content: start;
+    }
+
+    &.flex-align-bottom {
+        align-items: end;
+        justify-content: end;
+    }
+}
+
+.bg-preview {
+    background: @gray-lighter;
+}
+
+.bg-cover {
+    background-size: cover !important;
+}
+
+.bg-shade {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%; height: 100%;
+        top: 0; left: 0;
+        .gradient-horizontal(transparent, fade(#000, 35%));
+    }
+}
+
+.img-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-started {
+    position: relative;
+    height: 100vh;
+    border-bottom: 2px solid @brand-primary;
+    .bg-preview();
+    .text-white();
+    .text-center();
+
+    @media(min-width: @screen-tablet) {
+        height: 50vh;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%; height: 100%;
+        top: 0; left: 0;
+        .gradient-diagonal(fade(@brand-primary, 35%), fade(@brand-info, 35%));
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+
+.text-heading {
+    .text-center();
+}
+
+.swiper-features {
+    height: 100vh;
+
+    @media(min-width: @screen-tablet) {
+        height: 50vh;
+    }
+
+    .swiper-slide {
+        .row-flex();
+        .flex-align-center();
+    }
+}
+
+
+.post-feature {
+    .text-center();
 }

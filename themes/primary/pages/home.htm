@@ -4,14 +4,67 @@ layout = "default"
 is_hidden = 0
 
 ==
-<div class="hero">
-    <div class="content-center">
-        <div class="container">
-            <h1>Hi Bro! Let's Get Started</h1>
-            <p class="lead">All set, we're ready to go.</p>
-            <p>
-            	<a class="btn btn-lg btn-primary">Start Crafting</a>
-            </p>
-        </div>
+function onStart() {
+    $this->page->noHeader = true;
+}
+
+==
+<section class="block block-started row-flex flex-align-center" style="background-image: url('https://i0.wp.com/wilylab.com/wp-content/uploads/2017/03/demointro.jpg?fit=1920%2C1080&ssl=1')">
+    <div class="container">
+        <h1>Octommerce</h1>
+        <p class="lead">
+            Powerful E-commerce Engine built with OctoberCMS
+        </p>
+
+        <a href="{{ 'docs/index'|page }}" class="btn btn-primary">DOCUMENTATION</a>
     </div>
-</div>
+</section>
+
+<section class="block block-features">
+    <div class="swiper-container swiper-features">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% set features = ['Cart System', 'Product Catalog', 'Product Search', 'Checkout', 'Payment', 'Taxation', 'Multilanguage'] %}
+            {% for feature in features %}
+            <div class="swiper-slide">
+                <div class="col-xs-12 text-center">
+                    <img src="http://unsplash.it/150/150?random" alt="" class="img-responsive img-center img-circle">
+                    <h4>{{ feature }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+{% put scripts %}
+<link rel="stylesheet" href="{{ [
+    '../../bower_components/swiper/dist/css/swiper.min.css'
+]|theme }}">
+
+<script src="{{ [
+    '../../bower_components/swiper/dist/js/swiper.min.js'
+]|theme }}"></script>
+
+<script>
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 3,
+
+    // If we need pagination
+    pagination: '.swiper-pagination',
+
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+  })
+</script>
+{% endput %}

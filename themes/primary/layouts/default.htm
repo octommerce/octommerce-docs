@@ -15,11 +15,15 @@ description = "Default layout"
         <![endif]-->
     </head>
     <body>
-        {% partial 'header' %}
+        {% if not this.page.noHeader %}
+            {% partial 'header' %}
+        {% endif %}
 
         {% page %}
 
-        {% partial 'footer' %}
+        {% if not this.page.noHeader %}
+            {% partial 'footer' %}
+        {% endif %}
 
         <script src="{{ [
             '../../bower_components/jquery/dist/jquery.min.js',
