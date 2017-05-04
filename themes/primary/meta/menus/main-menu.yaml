@@ -1,11 +1,11 @@
 name: 'Main Menu'
 items:
     -
-        title: 'Home'
+        title: DOCS
         type: cms-page
         code: ''
-        reference: home
+        reference: shipping/index
         viewBag:
-            isExternal: '0'
             isHidden: '0'
             cssClass: ''
+            isExternal: '0'
