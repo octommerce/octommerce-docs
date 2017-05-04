@@ -1,6 +1,10 @@
 description = "Docs layout"
 
 ==
+function onInit() {
+    $this['secondParameter'] = Request::segment(2);
+}
+==
 <!DOCTYPE html>
 <html>
     <head>

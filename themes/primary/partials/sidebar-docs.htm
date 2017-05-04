@@ -17,28 +17,28 @@ code = "docs-api-menu"
 
 <ul class="nav nav-docs-lists">
     <h4 class="docs-list-head" data-toggle="collapse" href="#collapseShipping">Shipping</h4>
-    <ul class="nav nav-docs-list collapse in" id="collapseShipping">
+    <ul class="nav nav-docs-list collapse {{ secondParameter == 'shipping' ? 'in' : '' }}" id="collapseShipping">
         {% partial "shippingMenu::items" items=shippingMenu.menuItems %}
     </ul>
 </ul>
 
 <ul class="nav nav-docs-lists">
     <h4 class="docs-list-head" data-toggle="collapse" href="#collapsePromo">Promo</h4>
-    <ul class="nav nav-docs-list collapse" id="collapsePromo">
+    <ul class="nav nav-docs-list collapse {{ secondParameter == 'promo' ? 'in' : '' }}" id="collapsePromo">
         {% partial "promoMenu::items" items=promoMenu.menuItems %}
     </ul>
 </ul>
 
 <ul class="nav nav-docs-lists">
     <h4 class="docs-list-head" data-toggle="collapse" href="#collapseReport">Report</h4>
-    <ul class="nav nav-docs-list collapse" id="collapseReport">
+    <ul class="nav nav-docs-list collapse {{ secondParameter == 'report' ? 'in' : '' }}" id="collapseReport">
         {% partial "reportMenu::items" items=reportMenu.menuItems %}
     </ul>
 </ul>
 
 <ul class="nav nav-docs-lists">
     <h4 class="docs-list-head" data-toggle="collapse" href="#collapseApi">Api</h4>
-    <ul class="nav nav-docs-list collapse" id="collapseApi">
+    <ul class="nav nav-docs-list collapse {{ secondParameter == 'api' ? 'in' : '' }}" id="collapseApi">
         {% partial "apiMenu::items" items=apiMenu.menuItems %}
     </ul>
 </ul>
