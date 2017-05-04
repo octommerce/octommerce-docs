@@ -1,0 +1,44 @@
+[staticMenu shippingMenu]
+code = "docs-shipping-menu"
+
+[staticMenu promoMenu]
+code = "docs-promo-menu"
+
+[staticMenu reportMenu]
+code = "docs-report-menu"
+
+[staticMenu apiMenu]
+code = "docs-api-menu"
+
+==
+<div class="block-table-of-content">
+    <a href="#" class="btn btn-primary">CONTENTS</a>
+</div>
+
+<ul class="nav nav-docs-lists">
+    <h4 class="docs-list-head" data-toggle="collapse" href="#collapseShipping">Shipping</h4>
+    <ul class="nav nav-docs-list collapse in" id="collapseShipping">
+        {% partial "shippingMenu::items" items=shippingMenu.menuItems %}
+    </ul>
+</ul>
+
+<ul class="nav nav-docs-lists">
+    <h4 class="docs-list-head" data-toggle="collapse" href="#collapsePromo">Promo</h4>
+    <ul class="nav nav-docs-list collapse" id="collapsePromo">
+        {% partial "promoMenu::items" items=promoMenu.menuItems %}
+    </ul>
+</ul>
+
+<ul class="nav nav-docs-lists">
+    <h4 class="docs-list-head" data-toggle="collapse" href="#collapseReport">Report</h4>
+    <ul class="nav nav-docs-list collapse" id="collapseReport">
+        {% partial "reportMenu::items" items=reportMenu.menuItems %}
+    </ul>
+</ul>
+
+<ul class="nav nav-docs-lists">
+    <h4 class="docs-list-head" data-toggle="collapse" href="#collapseApi">Api</h4>
+    <ul class="nav nav-docs-list collapse" id="collapseApi">
+        {% partial "apiMenu::items" items=apiMenu.menuItems %}
+    </ul>
+</ul>

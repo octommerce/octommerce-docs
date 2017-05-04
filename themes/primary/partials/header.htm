@@ -4,7 +4,7 @@
 code = "main-menu"
 
 ==
-<header class="navbar-fixed-top navbar-default">
+<header class="navbar-default">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle">
@@ -15,12 +15,12 @@ code = "main-menu"
 			</button>
 
 			<a class="navbar-brand" href="{{ 'home'|page }}">
-				{{ this.theme.site_name }}
+                <img src="http://octobercms.com/themes/website/assets/images/october-color-logo.svg">
 			</a>
 		</div>
 
 		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-left">
+			<ul class="nav navbar-nav navbar-right">
 				{% partial "mainMenu::items" items=mainMenu.menuItems %}
 			</ul>
 		</div>
